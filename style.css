@@ -40,7 +40,7 @@ header {
     font-size: 1.2em;
 }
 
-/* About bo'limi */
+/* About bo'limi
 section#about {
     padding: 40px 20px;
     max-width: 900px;
@@ -51,7 +51,7 @@ section#about h2 {
     border-bottom: 3px solid brown;
     padding-bottom: 10px;
     margin-bottom: 20px;
-}
+} */
 
 /* Projects bo'limi */
 section#projects {
@@ -138,4 +138,81 @@ footer {
 }
 a{
     text-decoration: none;
+}
+
+
+/* ====== ABOUT SECTION – ELEGANT GIRL STYLE ====== */
+#about {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 50px;
+    border-radius: 18px;
+    background: #fff8fb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    position: relative;
+    border-left: 8px solid #e4a1b5;
+}
+
+/* Dekor yumshoq gradient fon shakli */
+#about::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle, #deb4c2, #ffedf4);
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.45;
+}
+
+#about h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    color: #be3f63;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Sarlavha osti nozik chiziq */
+#about h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background: #c06c84;
+    margin-top: 6px;
+    border-radius: 2px;
+}
+
+#about p {
+    font-size: 1.05rem;
+    color: #6e585f;
+    margin-top: 10px;
+    padding-left: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Matnlarni ajratish uchun card-style ichki bo‘lim */
+#about .block {
+    background: #ffffff;
+    padding: 18px 22px;
+    margin: 25px 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    border-left: 4px solid #d47591;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    #about {
+        padding: 25px 20px;
+    }
+    #about h2 {
+        font-size: 1.5rem;
+    }
 }
