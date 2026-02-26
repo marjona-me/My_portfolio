@@ -1,13 +1,18 @@
-/* Umumiy sozlamalar */
-body {
-    font-family: 'Arial', sans-serif;
+/* ================= RESET ================= */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Header */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ================= HEADER ================= */
 header {
     background: linear-gradient(135deg, brown, rgb(236, 193, 162));
     color: white;
@@ -15,6 +20,8 @@ header {
 }
 
 .header-container {
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -31,55 +38,73 @@ header {
 }
 
 .header-text h1 {
-    margin: 0;
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
 
 .header-text p {
-    margin-top: 10px;
-    font-size: 1.2em;
+    margin-top: 8px;
+    font-size: 1.15em;
 }
 
-/* About bo'limi
-section#about {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-section#about h2 {
-    border-bottom: 3px solid brown;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-} */
-
-/* Projects bo'limi */
-section#projects {
-    padding: 40px 20px;
+/* ================= SECTIONS ================= */
+section {
     max-width: 1200px;
-    margin: auto;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-section#projects h2 {
-    border-bottom: 3px solid #6a11cb;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+h2 {
     text-align: center;
+    margin-bottom: 25px;
+    color: #be3f63;
+}
+
+/* ================= ABOUT ================= */
+#about {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 50px;
+    border-radius: 18px;
+    background: #fff8fb;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border-left: 8px solid #e4a1b5;
+    position: relative;
+}
+
+#about .block {
+    background: #ffffff;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    border-left: 4px solid #d47591;
+}
+
+/* ================= PROJECTS ================= */
+#projects {
+    padding: 40px 20px;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* ⭐ 3 tadan */
+    gap: 25px;
 }
 
 .project {
-    background-color: white;
-    border-radius: 15px;
+    background: white;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
 
 .project img {
@@ -88,131 +113,81 @@ section#projects h2 {
     object-fit: cover;
 }
 
-.project h3 {
-    margin: 15px 0 10px;
-}
-
 .project p {
-    padding: 0 15px 15px;
+    padding: 15px;
+    flex-grow: 1;
 }
 
 .project a {
-    display: inline-block;
-    margin-bottom: 15px;
+    display: block;
+    margin: 0 15px 18px;
+    padding: 10px;
     text-decoration: none;
-    color: #6a11cb;
+    color: white;
+    background: linear-gradient(135deg, rgb(87, 69, 130), rgb(228, 207, 173));
+    border-radius: 8px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: 0.25s;
 }
 
 .project a:hover {
-    color: #2575fc;
+    filter: brightness(1.1);
 }
 
-.project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+/* ================= CONTACT ================= */
+#contact .container {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
 }
 
-/* Footer */
+#contact a {
+    color: #7b3ff2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
 }
 
-/* Responsiv dizayn */
-@media (max-width: 768px) {
+/* ================= RESPONSIVE ================= */
+
+/* Planshet */
+@media (max-width: 900px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .header-container {
         flex-direction: column;
+        text-align: center;
     }
 }
 
+/* Telefon */
+@media (max-width: 500px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px 0;
-}
-a{
-    text-decoration: none;
-}
-
-
-/* ====== ABOUT SECTION – ELEGANT GIRL STYLE ====== */
-#about {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px 50px;
-    border-radius: 18px;
-    background: #fff8fb;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    position: relative;
-    border-left: 8px solid #e4a1b5;
-}
-
-/* Dekor yumshoq gradient fon shakli */
-#about::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 130px;
-    height: 130px;
-    background: radial-gradient(circle, #deb4c2, #ffedf4);
-    border-radius: 50%;
-    z-index: 0;
-    opacity: 0.45;
-}
-
-#about h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.9rem;
-    color: #be3f63;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Sarlavha osti nozik chiziq */
-#about h2::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 3px;
-    background: #c06c84;
-    margin-top: 6px;
-    border-radius: 2px;
-}
-
-#about p {
-    font-size: 1.05rem;
-    color: #6e585f;
-    margin-top: 10px;
-    padding-left: 5px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Matnlarni ajratish uchun card-style ichki bo‘lim */
-#about .block {
-    background: #ffffff;
-    padding: 18px 22px;
-    margin: 25px 0;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-    border-left: 4px solid #d47591;
-}
-
-/* Responsive */
-@media (max-width: 700px) {
     #about {
         padding: 25px 20px;
     }
-    #about h2 {
-        font-size: 1.5rem;
+
+    .profile-img img {
+        width: 110px;
+        height: 110px;
     }
 }
